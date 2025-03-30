@@ -1,0 +1,87 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import ServiceCard from "../../components/ServiceCard";
+import TechBadge from "../../components/TechBadge";
+
+// Datos para SEO
+const pageTitle = "DevSolutions - Desarrollo de Software Profesional";
+const pageDescription =
+    "Expertos en desarrollo de aplicaciones web, móviles y soluciones WordPress";
+
+// Datos reutilizables
+const services = [
+    {
+        title: "Plugins WordPress",
+        icon: "logos:wordpress-icon",
+        description:
+            "Desarrollo de plugins personalizados para extender la funcionalidad de tu sitio",
+    },
+    {
+        title: "Aplicaciones Web",
+        icon: "mdi:web",
+        description: "Soluciones corporativas escalables y seguras",
+    },
+];
+
+const technologies = ["React", "Node.js", "GraphQL", "Astro", "PHP"];
+---
+
+<MainLayout {pageTitle} {pageDescription}>
+    <!-- Hero Section -->
+    <section
+        class="py-20 px-4 bg-gradient-to-b from-secondary to-primary text-white"
+    >
+        <div class="container mx-auto max-w-4xl text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                Transformamos ideas en soluciones digitales
+            </h1>
+            <p class="text-xl mb-8">
+                Especialistas en desarrollo de software a medida
+            </p>
+            <a
+                href="#contacto"
+                class="bg-primary text-white px-8 py-3 rounded-full hover:bg-opacity-90 transition"
+            >
+                Contactar
+            </a>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section class="py-20 px-4 bg-gray-50" id="servicios">
+        <div class="container mx-auto max-w-6xl">
+            <h2
+                class="text-3xl md:text-4xl font-bold text-center mb-12 text-secondary"
+            >
+                Nuestros Servicios
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                {
+                    services.map((service) => (
+                        <ServiceCard
+                            title={service.title}
+                            icon={service.icon}
+                            description={service.description}
+                        />
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- Tecnologías -->
+    <section class="py-20 px-4" id="tecnologias">
+        <div class="container mx-auto max-w-6xl">
+            <h2
+                class="text-3xl md:text-4xl font-bold text-center mb-12 text-secondary"
+            >
+                Tecnologías que utilizamos
+            </h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                {technologies.map((tech) => <TechBadge tech={tech} />)}
+            </div>
+        </div>
+    </section>
+
+    <!-- Resto de secciones similares... -->
+</MainLayout>
