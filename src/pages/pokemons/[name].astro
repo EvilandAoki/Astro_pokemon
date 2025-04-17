@@ -211,10 +211,7 @@ const typeColors: { [key: string]: string } = {
 </Layout>
 
 <script>
-    interface FavoritePokemon {
-        name: string;
-        id: number;
-    }
+    import type { FavoritePokemon } from "@interfaces/favorite-pokemon";
 
     const handlePageLoad = () => {
         let favoritePokemon: FavoritePokemon[] = JSON.parse(
@@ -242,8 +239,8 @@ const typeColors: { [key: string]: string } = {
         const isFavorite = favoritePokemon.find((fav) => fav.name == name);
 
         if (isFavorite) {
-            heartOutline.classList.add('hidden');
-            heartFull.classList.remove('hidden');
+            heartOutline.classList.add("hidden");
+            heartFull.classList.remove("hidden");
         }
 
         const toggleFavorite = () => {

@@ -12,6 +12,12 @@
     "paths": {
       "@components/*": [
         "./src/components/*"
+      ],
+      "@interfaces/*": [
+        "./src/interfaces/*"
+      ],
+      "@layouts/*": [
+        "./src/layouts/*"
       ]
     },
     "jsx": "preserve",
